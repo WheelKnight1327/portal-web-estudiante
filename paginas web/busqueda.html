@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda</title>
+    <link rel="icon" type="image/x-icon" href="https://www.ceti.mx/images/Ceti.png">
+    <!-- Bootstrap 5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Hoja de estilos personal -->
+    <link href="../css/estilos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body style="padding-top:70px;"> <!-- el padding es para dejar espacio para la barra superior -->
+    <!--Barra de navegación superior-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="..\imagenes\logo_ceti.png" alt="Logo" width="40" height="40" class="d-inline-block">
+                Portal del estudiante
+            </a>
+            <!---->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <!--ícono que aparece cuando se acorta barra superior-->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--Contenido contraible-->
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <!--Atributos de barra superior que incluye comportamiento por tamaño disponible-->
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <!--Listas desplegables-->
+                    <li class="nav-item dropdown">
+                        <!--Título de lista-->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Accesos
+                        </a>
+                        <!--Contenido de lista con hipervínculos-->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="accesos/control_escolar.html">Control Escolar</a></li>
+                            <li><a class="dropdown-item" href="accesos/moodle.html">Moodle</a></li>
+                            <li><a class="dropdown-item" href="accesos/evaluacion_docente.html">Evaluacion
+                                    Docente</a>
+                            </li>
+                            <li><a class="dropdown-item" href="accesos/directorio_telefonico.html">Directorio
+                                    telefónico</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Trámites
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="tramites/globales.html">Globales</a></li>
+                            <li><a class="dropdown-item" href="tramites/titulacion.html">Titulación</a></li>
+                            <li><a class="dropdown-item" href="tramites/intersemestrales.html">Intersemestrales</a>
+                            </li>
+                            <li><a class="dropdown-item" href="tramites/extraordinarios.html">Extraordinarios</a>
+                            </li>
+                            <li><a class="dropdown-item" href="tramites/egreso.html">Egreso</a></li>
+                            <li><a class="dropdown-item" href="tramites/baja.html">Baja</a></li>
+                            <li><a class="dropdown-item" href="tramites/becas.html">Becas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Extracurriculares
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="extracurriculares/estadias_profesionales.html">Estadías
+                                    profesionales</a></li>
+                            <li><a class="dropdown-item"
+                                    href="extracurriculares/practicas_profesionales.html">Prácticas
+                                    Profesionales</a></li>
+                            <li><a class="dropdown-item" href="extracurriculares/servicio_social.html">Servicio
+                                    Social</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Recursos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="https://colomos.ceti.mx/templates/conoceCeti/calendarioEscolar.php"
+                                    target="_blank">Calendario Escolar</a></li>
+                            <li><a class="dropdown-item" href="../documentos/Reglamento Tecnologo.pdf">Reglamento
+                                    media
+                                    superior</a></li>
+                            <li><a class="dropdown-item" href="../documentos/Reglamento Ingenieria.pdf">Reglamento
+                                    superior</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://direccionacademica.ceti.mx/planes_y_programas.php"
+                                    target="_blank">Planes y programas de estudio</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Licencias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="licencias/office.html">Office365</a></li>
+                            <li><a class="dropdown-item" href="licencias/matlab.html">Matlab</a></li>
+                            <li><a class="dropdown-item" href="licencias/autodesk.html">Autodesk</a></li>
+                            <li><a class="dropdown-item" href="licencias/solidworks.html">SolidWorks</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Soporte Técnico
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="soporte_tecnico/correos.html">Correo Google y
+                                    Microsoft</a></li>
+                            <li><a class="dropdown-item" href="soporte_tecnico/habilitar_moodle.html">Habilitar
+                                    Moodle</a></li>
+                            <li><a class="dropdown-item" href="soporte_tecnico/acceso_red_wifi.html">Acceso red
+                                    Wi-fi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Formulario alineado completamente a la derecha -->
+                <form id="formNavBusq" action="busqueda.html" class="d-flex justify-content-end" role="search"
+                    method="get">
+                    <!-- Formulario se ajusta a cantidad espacio disponible -->
+                    <input class="form-control me-2" type="search" placeholder="Buscar" name="b" />
+                    <button class="btn btn-outline-light" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+                            </path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--Contenido central, se expande al tener un tamaño menor del mediano-->
+    <div class="container p-md-3">
+        <div class="column">
+            <div class="row">
+                <p class="display-3">Resultados de busqueda:</p>
+            </div>
+            <div class="row py-3">
+                <div id="liveAlertPlaceholder"></div>
+                <form class="d-flex" role="search" id="formPagBusq">
+                    <input id="inputPagBusq" class="form-control flex-grow-1 rounded-0" type="search"
+                        placeholder="Ingrese una palabra clave para encontrar el contenido que buscas" />
+                    <button id="btnPagBusq" class="btn btn-secondary rounded-0" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 19 19">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+                            </path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <!--Sección de resultados de busqueda-->
+            <div class="row" id="secResultados">
+
+            </div>
+        </div>
+    </div>
+    <!--Aquí irá pie de pagina-->
+
+    <script>
+        //carga parametros de entrada si el usuario utiliza el form del nav superior
+        window.onload = function () { //se ejecuat al cargar la ventana
+            const params = new URLSearchParams(window.location.search); //obtiene lista de parametros de la URL
+            const query = params.get("b"); //accede al parametro especifico b de busqueda
+
+            if (query) { //si hubo parametro b
+                document.getElementById("inputPagBusq").value = query; //rellena el formulario para que sepa que se envio antes
+                buscar(query);
+            }
+        }
+        //codigo de espacio de alerta
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        const mostrarAlerta = (mensaje, tipo) => {
+            const wrapper = document.createElement('div')
+            wrapper.innerHTML = [
+                `<div class="alert alert-${tipo} alert-dismissible" role="alert">`,
+                `   <div>${mensaje}</div>`,
+                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+            ].join('')
+
+            alertPlaceholder.append(wrapper)
+        }
+        //asegura que el contenido es apto para la busqueda de paginas
+        function validarEntrada(texto) {
+            if (texto.trim() === "") { //Si el contenido resulta estar vacios
+                //alert("El campo no puede estar vacío");
+                mostrarAlerta('No puedes ingresar un campo vacio', 'warning'); //const que llama para generar div con alerta
+                return false;
+            }
+            return true;
+        }
+
+
+        //subida del formulario
+        function realizarBusqueda(event) {
+            event.preventDefault(); //evita que la página se recargue
+            //obtien contenido del formualrio
+            let palabra = document.getElementById("inputPagBusq").value;
+
+            if (!validarEntrada(palabra)) {
+                return; //no se realiza la busqueda si no es validado
+            }
+            //llama la función que se encarga de la peticion con el texto verificado
+            buscar(palabra);
+        }
+        //realiza la peticion de consulta al programa de JS
+        function buscar(queryParam) {
+            const query = queryParam || document.getElementById("inputPagBusq").value; //toma el dato enviado o el texto dentro del form
+            //toma los resultados por medio de petición GET y despues llama a la función para mostrarlos
+            fetch(`http://localhost:3000/busqueda?b=${encodeURIComponent(query)}`)
+                .then(pags => pags.json()) //obtiene datos y convierte a JSON
+                .then(pagsJSON => mostrarPaginas(pagsJSON)) //JSON a funcion
+                .catch(error => { //en caso de haber un problema
+                    console.error("Error en fecth:", error); //mensaje en la consola
+                    mostrarAlerta("Error al conectar con el servidor", "danger"); //mensaje de div con mayor importancia
+                });
+        }
+        //muestra los resultados en forma HTML que el usuario pueda interactuar
+        function mostrarPaginas(resultados) {
+            const div = document.getElementById("secResultados"); //asigna una const el espacio de resultados usando el ID
+            div.innerHTML = ""; //inicializa vacio
+
+            if (resultados.length == 0) { //mensaje corto si no mando ni un resultado.
+                div.innerHTML = `<h2>No se encontraron resultados</h2>`
+            }
+
+            resultados.forEach(r => { //crea un label <a> con el hipervinculo del resultado
+                div.innerHTML += `
+                    <a href="${r.url}"><h2>${r.nombre}</h2></a>
+                    <p>Palabras clave: ${r["palabras_clave"].join(", ")}</p>
+                `;
+            });
+        }
+
+        //evento que se ejecuta al realizar el submit del formulario
+        document.getElementById("formPagBusq").addEventListener("submit", realizarBusqueda)
+    </script>
+</body>
+
+</html>

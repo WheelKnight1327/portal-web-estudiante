@@ -1,0 +1,73 @@
+const cors = require('cors'); //permite que pueda acceptar peticiones de paginas fuera del servidor
+
+const express = require('express'); //framework de express para Node.js
+const { MongoClient, ObjectId } = require('mongodb'); //uso de motor de mongodb
+
+const app = express(); //instancia de aplicación HTTP para poder empezar a consultar queries GET o POST
+const client = new MongoClient('mongodb://localhost:27017'); //usa conexion de mondogdb, tiene que ser el mismo puerto de la conexion
+
+app.use(cors()); //habilita cors
+//peticion get para realizar busqueda de páginas
+app.get('/busqueda', async (req, res) => { //req de datos enviados, res datos qeu se podran enviar
+    console.log('Servidor recibió peticion GET de busqueda.html');
+    const query = req.query.b //lee el atributo b que fue enviado
+
+    await client.connect(); //espera a que se conecte con la base de datos
+    console.log('Conexión completada a MongoDB');
+    const db = client.db('portal_web'); //obtiene conexión con la base de datos no relacional
+
+    const palabras = query.split(" "); //obtiene lista de palabras en caso de poner mas de una
+    //se crea una expresion regular dinamica por cada palabra
+    const regexes = palabras.map(p => new RegExp(p, 'i')); //i es para remover mayusculas
+
+    //opcion 1, buscar que las palabras coincidan
+    // const resultados = await db.collection('paginas').find({ //practicamente esta realizando una consulta mongsh
+    //     "palabras clave": {$in: palabras} //in describe que regrese si alguna de las palabras proporcionada coincide con las palabras clave de la página.
+    // }).toArray(); //convierte en arreglo
+    //opcion 2, que alguna de las palabras coincida parcialmente por si la busqueda es de una palabra acortada
+    const resultados = await db.collection('paginas').find({ //practicamente esta realizando una consulta mongsh
+        "palabras_clave": {$in: regexes} //in describe que regrese si alguna de las palabras proporcionada coincide con las palabras clave de la página.
+    }).toArray(); //convierte en arreglo
+
+
+    console.log('Resultados obtenidos, enviando al cliente.');
+    res.json(resultados); //por medio de conexion retorna resultados de busqueda en forma JSON
+}
+);
+//peticion get para obtener datos del anuncio consultado
+app.get('/obtener-anuncio', async (req, res) => {
+    console.log('Servidor recibió peticion GET de anuncio.html');
+    const query = req.query.a //lee el atributo "a"
+
+    await client.connect(); //espera a que se conecte con la base de datos
+    console.log('Conexión completada a MongoDB');
+    const db = client.db('portal_web'); //obtiene conexión con la base de datos no relacional
+
+    const resultado = await db.collection('anuncios').findOne({
+        _id: new ObjectId(query) //utiliza el id para localizarlo
+    })
+
+    console.log('Anuncio obtenido, datos:', resultado);
+    res.json(resultado); //retorna información de anuncio en JSON
+});
+
+app.get('/anun-princ', async (req, res) => {//atributo no necesario
+    console.log('Servidor recibió peticion GET de pagina_principal.html');
+
+    await client.connect(); //espera a que se conecte con la base de datos
+    console.log('Conexión completada a MongoDB');
+    const db = client.db('portal_web'); //obtiene conexión con la base de datos no relacional
+
+    const consulta = {}; //consulta vacia porque queremos que tome todos los anuncios
+    const filtro = {fecha: -1}; //ordene los anuncios del mas reciente al mas viejo
+    const limite = 3; //solo se piden los primeros 3 resultados
+    //consulta completa
+    const resultados = await db.collection('anuncios').find(consulta).sort(filtro).limit(limite).toArray();
+
+    console.log('Anuncios obtenidos, enviando al cliente.');
+    res.json(resultados); //envia resultados usando conexión
+});
+
+app.listen(3000, () => {
+    console.log('Servidor corriendo en http://localhost:3000');
+});

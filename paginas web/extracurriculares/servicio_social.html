@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio Social</title>
+    <link rel="icon" type="image/x-icon" href="https://www.ceti.mx/images/Ceti.png">
+    <!-- Bootstrap 5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Hoja de estilos personal -->
+    <link href="../../css/estilos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body style="padding-top:70px;"> <!-- el padding es para dejar espacio para la barra superior -->
+    <!--Barra de navegación superior-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="..\..\imagenes\logo_ceti.png" alt="Logo" width="40" height="40" class="d-inline-block">
+                Portal del estudiante
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Accesos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Control Escolar</a></li>
+                            <li><a class="dropdown-item" href="#">Moodle</a></li>
+                            <li><a class="dropdown-item" href="#">Evaluacion Docente</a></li>
+                            <li><a class="dropdown-item" href="#">Directorio telefónico</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Trámites
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Globales</a></li>
+                            <li><a class="dropdown-item" href="#">Titulación</a></li>
+                            <li><a class="dropdown-item" href="#">Intersemestrales</a></li>
+                            <li><a class="dropdown-item" href="#">Extraordinarios</a></li>
+                            <li><a class="dropdown-item" href="#">Egreso</a></li>
+                            <li><a class="dropdown-item" href="#">Baja</a></li>
+                            <li><a class="dropdown-item" href="#">Becas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Extracurriculares
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Estadías</a></li>
+                            <li><a class="dropdown-item" href="#">Prácticas Profesionales</a></li>
+                            <li><a class="dropdown-item" href="#">Servicio Social</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Recursos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Calendario Escolar</a></li>
+                            <li><a class="dropdown-item" href="#">Reglamento media superior</a></li>
+                            <li><a class="dropdown-item" href="#">Reglamento superior</a></li>
+                            <li><a class="dropdown-item" href="#">Planes y programas de estudio</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Licencias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Office365</a></li>
+                            <li><a class="dropdown-item" href="#">Matlab</a></li>
+                            <li><a class="dropdown-item" href="#">Autodesk</a></li>
+                            <li><a class="dropdown-item" href="#">SolidWorks</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Soporte Técnico
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Correo Google y Microsoft</a></li>
+                            <li><a class="dropdown-item" href="#">Habilitar Moodle</a></li>
+                            <li><a class="dropdown-item" href="#">Acceso red Wi-fi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Formulario alineado completamente a la derecha -->
+                <form class="d-flex justify-content-end" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" />
+                    <button class="btn btn-outline-light" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+                            </path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <button class="btn btn-primary d-md-none mt-3" data-bs-toggle="collapse" data-bs-target="#sideBarMenu">
+                Contenido de la página
+            </button>
+            <aside class="col-md-3 col-lg-2 bg-light border-end">
+                <div class="collapse d-md-block" id="sideBarMenu">
+                    <!-- <div class="position-sticky pt-3" style="top:20px;"> -->
+                    <strong class="mt-3" href="#titulo">Contenido:</strong>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#requisitos">Requisitos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#inscripcion">Inscripción</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active" href="#sub_reportes">Subir reportes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#procedimiento">Procedimiento</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <main class="col-md-9 col-lg-10 p-3 min-vh-100">
+                <h1 id="titulo">Servicio Social</h1>
+                <p>
+                    El Servicio Social es un <b>requisito obligatorio para los estudiantes de Tecnología e 
+                    Ingeniería para la terminación de carrera y eventual titulación</b>. Es importante que 
+                    sigan las indicaciones y se mantengan comunicados <strong>a partir de Sexto semestre</strong> para asegurar 
+                    la terminación en tiempo y forma.
+                </p>
+                <p>
+                    Recomendamos revisar todos los servicios disponibles y elijas el que te genere más interés y se adecue 
+                    a tu disponibilidad para evitar retrasos o conflictos con los reportes de actividades. Habla con el 
+                    encargado/supervisor de servicio si deseas conocer más detalles.
+                </p>
+                <h2 id="requisitos">Requisitos</h2>
+                <ul>
+                    <li>Estar entre el sexto y octavo semestre.</li>
+                    <li>Contar con algún tipo de seguridad social o pensión del estado.</li>
+                </ul>
+                <h2 id="inscripcion">Inscripción</h2>
+                <p>
+                    Espera las instrucciones del servicio social en la reunión informativa de Servicio Social 
+                    que da inicio a las asignaciones del mismo (se realiza de forma semestral). Anota las fechas de inicio y 
+                    los servicios en los que están interesados en realizar.
+                </p>
+                <p>
+                    Cuando llegue la fecha, ingresa a la plataforma de Control Escolar. En el menú lateral, una vez estés 
+                    en sexto semestre, aparecerá un botón que dice Servicio Social. Al darle clic, aparecerá una pantalla con el estado de su Servicio Social. 
+                </p>
+                <img style="object-fit: contain; height: 400px;" src="..\..\imagenes\img_extracurriculares\servicio_social_1.png" class="img-fluid page_img" alt="captura ícono servicio social control escolar">
+                <p>Revisa las opciones disponibles e inscríbete. <b>Ten en cuenta que los cupos son limitados por lo que te recomendamos que anticipes
+                     tu elección y te inscribas lo más pronto posible.</b></p>
+                <p>
+                    Una vez inscrito, comunícate con el supervisor y el encargado para recibir indicaciones. Descarga el formato control de Servicio Social y 
+                    de Asignación de Servicio Social. Entregarlos al responsable del servicio para que te lo firme y selle. Entrega el formato firmado y 
+                    sellado al depto. de Servicio Social de apoyo académico para dar por iniciado tu servicio social. <b>Conserva los dos documentos durante 
+                    la realización del servicio.</b>
+                </p>
+                <h2 id="sub_reportes">Subir Reportes</h2>
+                <p>Cuando generes un reporte bimestral, asegúrate de recibir las instrucciones del encargado para cada reporte para las fechas, actividades, 
+                    observaciones y horas cumplidas. En la sección de Servicio Social de Control Escolar generar el reporte y los descargas.</p>
+                <p>Entrega el reporte generado al encargado para ser firmado. Después llevalo al supervisor del Servicio Social para que te lo selle. 
+                    Una vez así, puede escanearlo y subirlo en la sección correspondiente de este reporte. Espera revisión de sistema y se verán 
+                    reflejadas las horas.</p>
+                <h2 id="procedimiento">Procedimiento</h2>
+                <p><b>Nota:</b> todos los formatos requeridos son generados en plataforma de control escolar</p>
+                <ol>
+                    <li>Esperar instrucciones de la reunión informativa de Servicio Social; decide tu servicio social.</li>
+                    <li>Cuando llegue la fecha, ingresa a la plataforma de Control Escolar (<a href="https://escolomos.ceti.mx/">escolomos.ceti.mx</a>) e 
+                        inscríbete en el servicio social.</li>
+                    <li>Descarga el formato de control de Servicio Social y de Asignación de Servicio Social.</li>
+                    <li>Lleva los formatos al supervisor del servicio para que te lo firmen y sellen los datos de inicio.</li>
+                    <li>Entrega el formato al depto. de Servicio Social en Apoyo Académico para iniciar el servicio.</li>
+                    <li>Realiza tu servicio social y sube los reportes bimestrales. <strong>Deben cumplir con 480 hrs. realizadas.</strong></li>
+                    <li>Una vez terminadas, lleva el formato de Control de Servicio Social al supervisor para firmar y sellado de los datos de finalización del servicio. 
+                        Recomendamos sacar copia del formato y solicitar firmado y sellado de ambos.</li>
+                    <li>Lleva el formato sellado al departamento de Servicio Social para concluir el trámite.</li>
+                    <li>Espera las indicaciones para la impresión de la constancia de Servicio Social <u>(este trámite es realizado por la escuela).</u></li>
+                </ol>
+                <p>Una vez finalizado el servicio social, puedes consultar el estado en la pantalla principal de la plataforma virtual de Control Escolar. 
+                    Da clic en el botón de Serv. Soc. en la parte superior de la pantalla y verás la información. Mantente informado en los trámites de 
+                    egreso para recibir su constancia de terminación de Servicio Social.</p>
+                <img src="..\..\imagenes\img_extracurriculares\servicio_social_2.png" class="img-fluid page_img" alt="captura progreso servicio social control escolar">
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

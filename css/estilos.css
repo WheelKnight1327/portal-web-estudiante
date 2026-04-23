@@ -1,0 +1,62 @@
+:target {
+  scroll-margin-top: 70px;
+}
+
+#carouselAnuncios {
+    height: 60vh; /* altura relativa a la pantalla */
+}
+
+#carouselAnuncios .carousel-inner,
+#carouselAnuncios .carousel-item {
+    height: 100%;
+}
+
+#carouselAnuncios img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+#inputBusqPrinc{
+  font-size: 20px;
+}
+
+#inputBusqPrinc::placeholder {
+  font-style: italic;
+  font-size: 20px;
+}
+
+#inputPagBusq{
+  font-size: 20px;
+  /* height: 60px;
+  padding-top: 0;
+  padding-bottom: 0; */
+}
+
+#inputPagBusq::placeholder {
+  font-style: italic;
+  font-size: 20px;
+}
+
+#logoPieDePagina img{
+  object-fit: contain;
+}
+
+.page_img {
+  max-width: 600px;
+  padding: 10px;
+  width: 100%;
+}
+/* comportamiento cuando ancho sea mayor que "m" */
+@media (min-width: 768px) {
+    /* espacio de fondo llenara espacio visible */
+    .altura-flexible {
+        min-height: calc(100vh - 70px); /*remueve el espacio que toma el navbar*/
+    }
+    .img-anuncio { /*imagen no rebasara espacio visible posible*/
+        max-height: calc(100vh - 70px);
+        object-fit: contain; /*No perder relacion de aspecto*/
+    }
+}
+/*cuando sea menor que m estos cambios seran anulados.*/

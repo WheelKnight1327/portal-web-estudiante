@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio telefónico</title>
+    <link rel="icon" type="image/x-icon" href="https://www.ceti.mx/images/Ceti.png">
+    <!-- Bootstrap 5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Hoja de estilos personal -->
+    <link href="../../css/estilos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body style="padding-top:70px;"> <!-- el padding es para dejar espacio para la barra superior -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="..\..\imagenes\logo_ceti.png" alt="Logo" width="40" height="40" class="d-inline-block">
+                Portal del estudiante
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Accesos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Control Escolar</a></li>
+                            <li><a class="dropdown-item" href="#">Moodle</a></li>
+                            <li><a class="dropdown-item" href="#">Evaluacion Docente</a></li>
+                            <li><a class="dropdown-item" href="#">Directorio telefónico</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Trámites
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Globales</a></li>
+                            <li><a class="dropdown-item" href="#">Titulación</a></li>
+                            <li><a class="dropdown-item" href="#">Intersemestrales</a></li>
+                            <li><a class="dropdown-item" href="#">Extraordinarios</a></li>
+                            <li><a class="dropdown-item" href="#">Egreso</a></li>
+                            <li><a class="dropdown-item" href="#">Baja</a></li>
+                            <li><a class="dropdown-item" href="#">Becas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Extracurriculares
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Estadías</a></li>
+                            <li><a class="dropdown-item" href="#">Prácticas Profesionales</a></li>
+                            <li><a class="dropdown-item" href="#">Servicio Social</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Recursos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Calendario Escolar</a></li>
+                            <li><a class="dropdown-item" href="#">Reglamento media superior</a></li>
+                            <li><a class="dropdown-item" href="#">Reglamento superior</a></li>
+                            <li><a class="dropdown-item" href="#">Planes y programas de estudio</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Licencias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Office365</a></li>
+                            <li><a class="dropdown-item" href="#">Matlab</a></li>
+                            <li><a class="dropdown-item" href="#">Autodesk</a></li>
+                            <li><a class="dropdown-item" href="#">SolidWorks</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Soporte Técnico
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Correo Google y Microsoft</a></li>
+                            <li><a class="dropdown-item" href="#">Habilitar Moodle</a></li>
+                            <li><a class="dropdown-item" href="#">Acceso red Wi-fi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Formulario alineado completamente a la derecha -->
+                <form class="d-flex justify-content-end" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" />
+                    <button class="btn btn-outline-light" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+                            </path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <button class="btn btn-primary d-md-none mt-3" data-bs-toggle="collapse" data-bs-target="#sideBarMenu">
+                Contenido de la página
+            </button>
+            <aside class="col-md-3 col-lg-2 bg-light border-end">
+                <div class="collapse d-md-block" id="sideBarMenu">
+                    <!-- <div class="position-sticky pt-3" style="top:20px;"> -->
+                    <strong class="mt-3">Contenido:</strong>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#area_central">Área Central</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#archivo">Archivo</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <main class="col-md-9 col-lg-10 p-3 min-vh-100">
+                <h1>Directorio telefónico</h1>
+                <!-- Tabla 1 -->
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th colspan="5" class="text-center alert-success">
+                                    <h3 id="area_central">Área Central</h3>
+                                    <h4> Tel: 33 3641 3250</h4>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: center;">Área</th>
+                                <th style="text-align: center;">Responsable</th>
+                                <th style="text-align: center;">Directo</th>
+                                <th style="text-align: center;">Extensión</th>
+                                <th style="text-align: center;">E-mail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dirección General</td>
+                                <td></td>
+                                <td>36422286</td>
+                                <td>240</td>
+                                <td>direccion.general@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Dirección Administrativa</td>
+                                <td>Analy Fabiola Estrada Hernández</td>
+                                <td>36418292</td>
+                                <td>243</td>
+                                <td>direccion.administrativa@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Subdirección de Finanzas</td>
+                                <td>Gumaro Uribe Miramontes</td>
+                                <td>36422545</td>
+                                <td>406</td>
+                                <td>subdir.finanzas@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Departamento de contabilidad</td>
+                                <td>María Cristina Flores Carrillo</td>
+                                <td></td>
+                                <td>251</td>
+                                <td>contabilidad@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Departamento de control presupuestal</td>
+                                <td>Adrián Alcaraz Acosta</td>
+                                <td></td>
+                                <td>407</td>
+                                <td>control.presupuestal@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Subdirección de administración</td>
+                                <td>Guadalupe Esther Peña Flores</td>
+                                <td>36425135</td>
+                                <td>245</td>
+                                <td>subdir.administracion@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Departamento de Recursos Humanos</td>
+                                <td>Marcela Araceli Medel Esparza</td>
+                                <td>36422390</td>
+                                <td>237</td>
+                                <td>recursos.humanos@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Departamento de Recursos Materiales</td>
+                                <td>Luis Antonio Muñoz Ramírez</td>
+                                <td>36417147</td>
+                                <td>219</td>
+                                <td>recursos.materiales@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Recepción de bienes</td>
+                                <td>Omar Castellano Chavez</td>
+                                <td></td>
+                                <td>212</td>
+                                <td>rm.materiales@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Dirección Académica</td>
+                                <td>Emma Alvarado Ortiz</td>
+                                <td>36422338</td>
+                                <td>252</td>
+                                <td>direccion.academica@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Subdirección de docencia</td>
+                                <td>Araceli Olmos Sánchez</td>
+                                <td></td>
+                                <td>267</td>
+                                <td>subdir.docencia@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Departamento de Normalización y Desarrollo Curricular</td>
+                                <td>Nuri Violeta Hernández Monroy</td>
+                                <td></td>
+                                <td>410</td>
+                                <td>desarrollo.curricular@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Departamento de Evaluación y Certificación del Aprendizaje</td>
+                                <td>Vanessa Karina Azamar Olmos</td>
+                                <td></td>
+                                <td>239</td>
+                                <td>titulacionycertificacion@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Subdirección de Investigación y Extensión</td>
+                                <td>Marcela Elizabeth Mata Romero</td>
+                                <td>36429349</td>
+                                <td>261</td>
+                                <td>subdir.investigacion@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Vinculación</td>
+                                <td>Delia Carbajal López</td>
+                                <td>36420339</td>
+                                <td>402</td>
+                                <td>convenios@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Normatividad y Fomento a la Investigación</td>
+                                <td></td>
+                                <td></td>
+                                <td>269</td>
+                                <td>fomento.investigacion@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Dirección de Desarrollo Institucional</td>
+                                <td>Patricia Guadalupe Cardona Rosales</td>
+                                <td>36425292</td>
+                                <td>232</td>
+                                <td>direccion.desarrollo@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Subdirección de Planeación y Evaluación Institucional</td>
+                                <td>Guillermo Francisco Gallardo de Anda</td>
+                                <td></td>
+                                <td>408</td>
+                                <td>subdir.planeacion@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Subdirección de Programación y Presupuestación</td>
+                                <td>Jaqueline López Díaz</td>
+                                <td></td>
+                                <td>216</td>
+                                <td>subdir.programacion@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Coordinación de Tecnologías de la Información</td>
+                                <td>Mario Alberto Soto Ramírez</td>
+                                <td></td>
+                                <td>238</td>
+                                <td>otic@ceti.mx</td>
+                            </tr>
+                            <tr>
+                                <td>Módulo de Información</td>
+                                <td>Norma Guitron Prado</td>
+                                <td>36413224</td>
+                                <td>318</td>
+                                <td>modulo.informacion@ceti.mx</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 id="archivo">Archivo</h2>
+                <p>Puede descargar el directorio a partir de este documento PDF.</p>
+                <button type="button" class="btn btn-secondary" onclick="location.href='../../documentos/directorio_enero2025.pdf'">Directorio_Telefonico_CETI</button>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

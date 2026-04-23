@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso a red Wi-fi CETI Colomos</title>
+    <link rel="icon" type="image/x-icon" href="https://www.ceti.mx/images/Ceti.png">
+    <!-- Bootstrap 5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Hoja de estilos personal -->
+    <link href="../../css/estilos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body style="padding-top:70px;"> <!-- el padding es para dejar espacio para la barra superior -->
+    <!--Barra de navegación superior-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="..\..\imagenes\logo_ceti.png" alt="Logo" width="40" height="40" class="d-inline-block">
+                Portal del estudiante
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Accesos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Control Escolar</a></li>
+                            <li><a class="dropdown-item" href="#">Moodle</a></li>
+                            <li><a class="dropdown-item" href="#">Evaluacion Docente</a></li>
+                            <li><a class="dropdown-item" href="#">Directorio telefónico</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Trámites
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Globales</a></li>
+                            <li><a class="dropdown-item" href="#">Titulación</a></li>
+                            <li><a class="dropdown-item" href="#">Intersemestrales</a></li>
+                            <li><a class="dropdown-item" href="#">Extraordinarios</a></li>
+                            <li><a class="dropdown-item" href="#">Egreso</a></li>
+                            <li><a class="dropdown-item" href="#">Baja</a></li>
+                            <li><a class="dropdown-item" href="#">Becas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Extracurriculares
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Estadías</a></li>
+                            <li><a class="dropdown-item" href="#">Prácticas Profesionales</a></li>
+                            <li><a class="dropdown-item" href="#">Servicio Social</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Recursos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Calendario Escolar</a></li>
+                            <li><a class="dropdown-item" href="#">Reglamento media superior</a></li>
+                            <li><a class="dropdown-item" href="#">Reglamento superior</a></li>
+                            <li><a class="dropdown-item" href="#">Planes y programas de estudio</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Licencias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Office365</a></li>
+                            <li><a class="dropdown-item" href="#">Matlab</a></li>
+                            <li><a class="dropdown-item" href="#">Autodesk</a></li>
+                            <li><a class="dropdown-item" href="#">SolidWorks</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Soporte Técnico
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Correo Google y Microsoft</a></li>
+                            <li><a class="dropdown-item" href="#">Habilitar Moodle</a></li>
+                            <li><a class="dropdown-item" href="#">Acceso red Wi-fi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Formulario alineado completamente a la derecha -->
+                <form class="d-flex justify-content-end" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" />
+                    <button class="btn btn-outline-light" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+                            </path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <button class="btn btn-primary d-md-none mt-3" data-bs-toggle="collapse" data-bs-target="#sideBarMenu">
+                Contenido de la página
+            </button>
+            <aside class="col-md-3 col-lg-2 bg-light border-end">
+                <div class="collapse d-md-block" id="sideBarMenu">
+                    <!-- <div class="position-sticky pt-3" style="top:20px;"> -->
+                    <strong class="mt-3" href="#titulo">Contenido:</strong>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#instrucciones">Instrucciones de solicitud</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#dudas">Dudas</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <main class="col-md-9 col-lg-10 p-3 min-vh-100">
+                <h1 id="titulo">Acceso a red Wi-fi CETI Colomos</h1>
+                <p>El CETI Plantel Colomos otorga a los estudiantes y docentes acceso a la red inalámbrica para la
+                    imparticicón de clases, acceso a recursos, publicación de anuncios y sobre todo dar acceso al
+                    Internet a quien lo necesite.</p>
+                <p><b>Importante: </b>Antes de acceder al Internet usando la red inalámbrica del CETI Colomos, asegúrese
+                    de leer la Política de uso de red.</p>
+
+                <h2 id="instrucciones">Instrucciones de solicitud</h2>
+                <p>Ingrese a la siguiente página: <a href="https://redinalambrica.ceti.mx/">redinalambrica.ceti.mx</a>.
+                    Aparecerá la siguiente página:</p>
+                </p>
+                <img src="..\..\imagenes\img_soporte_tecnico\red_1.png" class="img-fluid page_img"
+                    alt="paso 1 inscribirse red wi-fi">
+                <p>Dependiendo del tipo de dispositivo que desea conectar a la red, seleccione el dispositivo del menu
+                    superior y siga las instrucciones para obtener la dirección MAC única de su dispositivo.</p>
+                <p>Una vez que lo tenga, ingrese la dirección en este apartado que encontrará al final de la página
+                    elegida.</p>
+                <img src="..\..\imagenes\img_soporte_tecnico\red_2.png" class="img-fluid page_img"
+                    alt="paso 2 inscribirse red wi-fi">
+                <p>Al ingresarlo, lo llevará a otra página. Elija su estatus académico.</p>
+                <img src="..\..\imagenes\img_soporte_tecnico\red_3.png" class="img-fluid page_img"
+                    alt="paso 3 inscribirse red wi-fi">
+                <p>Luego aparecerá otra página donde debe ingresar su datos de sus estatus. Al finalizar, de clic en el
+                    botón de <b>Enviar</b>.</p>
+                <img src="..\..\imagenes\img_soporte_tecnico\red_4.png" class="img-fluid page_img"
+                    alt="paso 4 inscribirse red wi-fi">
+                <p>Una vez terminado, verá la siguiente pantalla:</p>
+                <img src="..\..\imagenes\img_soporte_tecnico\red_5.png" class="img-fluid page_img"
+                    alt="paso 5 inscribirse red wi-fi">
+                <p>Su solicitud ha sido completada. Recibirá un correo a su buzón de @live.ceti.mx. Utilice el usuario y
+                    la contraseña recibida una vez que se contacte a alguna de las redes disponibles (dependiendo sea el
+                    caso).</p>
+
+                <h2 id="dudas">Dudas</h2>
+                <p>Si tiene dudas o necesita comunicarse con el departamento encargado, envie un correo a <a
+                        href="mailto:auxiliar.software.ti@ceti.mx">
+                        auxiliar.software.ti@ceti.mx</a></p>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

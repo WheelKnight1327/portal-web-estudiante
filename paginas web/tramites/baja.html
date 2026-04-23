@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baja</title>
+    <link rel="icon" type="image/x-icon" href="https://www.ceti.mx/images/Ceti.png">
+    <!-- Bootstrap 5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Hoja de estilos personal -->
+    <link href="../../css/estilos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body style="padding-top:70px;"> <!-- el padding es para dejar espacio para la barra superior -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="..\..\imagenes\logo_ceti.png" alt="Logo" width="40" height="40" class="d-inline-block">
+                Portal del estudiante
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Accesos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Control Escolar</a></li>
+                            <li><a class="dropdown-item" href="#">Moodle</a></li>
+                            <li><a class="dropdown-item" href="#">Evaluacion Docente</a></li>
+                            <li><a class="dropdown-item" href="#">Directorio telefónico</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Trámites
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Globales</a></li>
+                            <li><a class="dropdown-item" href="#">Titulación</a></li>
+                            <li><a class="dropdown-item" href="#">Intersemestrales</a></li>
+                            <li><a class="dropdown-item" href="#">Extraordinarios</a></li>
+                            <li><a class="dropdown-item" href="#">Egreso</a></li>
+                            <li><a class="dropdown-item" href="#">Baja</a></li>
+                            <li><a class="dropdown-item" href="#">Becas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Extracurriculares
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Estadías</a></li>
+                            <li><a class="dropdown-item" href="#">Prácticas Profesionales</a></li>
+                            <li><a class="dropdown-item" href="#">Servicio Social</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Recursos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Calendario Escolar</a></li>
+                            <li><a class="dropdown-item" href="#">Reglamento media superior</a></li>
+                            <li><a class="dropdown-item" href="#">Reglamento superior</a></li>
+                            <li><a class="dropdown-item" href="#">Planes y programas de estudio</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Licencias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Office365</a></li>
+                            <li><a class="dropdown-item" href="#">Matlab</a></li>
+                            <li><a class="dropdown-item" href="#">Autodesk</a></li>
+                            <li><a class="dropdown-item" href="#">SolidWorks</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Soporte Técnico
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Correo Google y Microsoft</a></li>
+                            <li><a class="dropdown-item" href="#">Habilitar Moodle</a></li>
+                            <li><a class="dropdown-item" href="#">Acceso red Wi-fi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Formulario alineado completamente a la derecha -->
+                <form class="d-flex justify-content-end" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" />
+                    <button class="btn btn-outline-light" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+                            </path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <button class="btn btn-primary d-md-none mt-3" data-bs-toggle="collapse" data-bs-target="#sideBarMenu">
+                Contenido de la página
+            </button>
+            <aside class="col-md-3 col-lg-2 bg-light border-end">
+                <div class="collapse d-md-block" id="sideBarMenu">
+                    <!-- <div class="position-sticky pt-3" style="top:20px;"> -->
+                    <strong class="mt-3" href="#titulo">Contenido:</strong>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#descripcion">Descripción</a>
+                            <a class="nav-link active" href="#bajaTab" data-tab="temporal">Requisitos para baja
+                                temporal</a>
+                            <a class="nav-link active" href="#bajaTab" data-tab="definitiva">Requisitos para baja
+                                definitiva</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <main class="col-md-9 col-lg-10 p-3 min-vh-100">
+                <h1 id="titulo">Baja</h1>
+                <h2 id="descripcion">Descripción</h2>
+                <p>
+                    La baja definitiva es la terminación de los derechos del estudiante o la estudiante en el temporal.
+                    </br>
+                    La baja temporal es la interrupción de los estudios durante un periodo regular con una previa
+                    notificación hecha por escrito de los motivos.
+                </p>
+                <p>
+                    Para la solicitud de baja temporal del semestre en curso se debe realizar un petición directa al
+                    Departamento
+                    de Servicios de Apoyo Académico del plantel en un periodo dentro de las tres primeras semanas del
+                    inicio del semestre.
+                    La solicitud podrá ser hasta por dos semestres que serán considerados dentro del tiempo requerido
+                    para poder terminar el semestre.
+                </p>
+                <p>
+                    Cuando el estudiante solicite una baja definitiva voluntaria, podrá reingresar al semestre que se le
+                    corresponda siempre y cuando:
+                </p>
+                <ol type="A">
+                    <li>No tenga más de dos años de ausencia escolar.</li>
+                    <li>El Plan de Estudios que cursó esté vigente al momento de la solicitud; en caso contrario, se
+                        tramitará la
+                        convalidación de estudios conforme al procedimiento en vigor.</li>
+                    <li>Realice los procedimientos correspondientes al proceso de reinscripción.</li>
+                </ol>
+                <p>Para revisar las condiciones en las que un estudiante entra como baja definitiva por reprobación o
+                    interrupción de estudios,
+                    <b>favor de consultar el reglamento oficial del nivel en curso para obtener los detalles
+                        completos.</b>
+                </p>
+                <!-- Definición de tabs -->
+                <ul class="nav nav-tabs" id="bajaTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="temporal-tab" data-bs-toggle="tab"
+                            data-bs-target="#temporal" type="button">
+                            Baja temporal
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="definitiva-tab" data-bs-toggle="tab" data-bs-target="#definitiva"
+                            type="button">
+                            Baja definitiva
+                        </button>
+                    </li>
+                </ul>
+                <!-- Información dependiendo de tabs seleccionados -->
+                <div class="tab-content mt-3">
+                    <div class="tab-pane fade show active" id="temporal">
+                        <h2 id="req_baja_temporal">Requisitos para baja temporal</h2>
+                        <p>Entregar el Formato de No Adeudo para Baja con las firmas correspondientes, en la ventanilla
+                            del Departamento de Servicios de Apoyo Académico (el formato podrás descargarlo al final de
+                            esta información)
+                            junto con los siguientes documentos:</p>
+                        <ul>
+                            <li>Credencial de estudiante.</li>
+                            <li>Comprobante de pago de reinscripción al último semestre con materias cargadas.</li>
+                            <li>Recibo de documentos (en el que se enuncian los documentos que entregaste en el momento
+                                en que ingresaste a la institución).</li>
+                        </ul>
+                        <p>Nota: Si eres menor de edad, el formato de No Adeudo para Baja debe ser firmado por tu madre,
+                            padre, tutor o tutora, junto con
+                            una copia fotostática de su credencial del INE.</p>
+                        <b>Importante:</b>
+                        <p>Para la entrega de los documentos, en el caso de no acudir directamente el o la estudiante y
+                            ser mayor de edad:</p>
+                        <ul>
+                            <li>Si eres menor de edad, el formato de No adeudo para Baja deberá estar firmado por tu
+                                padre o tutor,
+                                acompañado de una copia fotostática de su credencial del IFE.</li>
+                            <li>Sólo podrás solicitar una baja temporal antes de que se capturen las calificaciones del
+                                primer parcial,
+                                esto lo realizarás en el Departamento de Servicios de Apoyo Académico.</li>
+                            <li>Si, por motivos especiales y comprobables, requieren una baja temporal una vez
+                                transcurrido el tiempo
+                                normal del trámite, deberás solicitar la autorización del trámite mediante la firma y
+                                sello de Dirección
+                                del Plantel en el formato de No adeudo para baja.</li>
+                            <li>Sólo se pueden autorizar 2 bajas temporales en el transcurso de la carrera de un
+                                estudiante, pueden ser
+                                continuas y de cualquier semestre.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="definitiva">
+                        <h2 id="req_baja_definitiva">Requisitos para baja definitiva</h2>
+                        <p>Entregar el Formato de No Adeudo para Baja con las firmas correspondientes, en la ventanilla
+                            del
+                            Departamento de Servicios de Apoyo Académico (el formato podrás descargarlo al final de esta
+                            información)
+                            junto con los siguientes documentos:.</p>
+                        <ul>
+                            <li>Credencial de estudiante.</li>
+                            <li>Comprobante de pago de reinscripción al último semestre con materias cargadas.</li>
+                            <li>Recibo de documentos (en el que se enuncian los documentos que entregaste en el momento
+                                en que ingresaste a la institución).</li>
+                        </ul>
+                        <p><b>Nota: </b>Si eres menor de edad, el formato de No Adeudo para Baja debe ser firmado por tu
+                            madre,
+                            padre, tutor o tutora, junto con una copia fotostática de su credencial del INE.</p>
+                        <b>Importante:</b>
+                        <p>Para la entrega de los documentos, en el caso de no acudir directamente el o la estudiante y
+                            ser mayor de edad:</p>
+                        <ul>
+                            <li>La persona interesadas debe realizar una carta poder simple, la cual debe estar firmada
+                                por él/ella
+                                y por la persona que recibirá los documentos de baja definitiva.</li>
+                            <li>Además debe anexar a la carta poder, copia fotostática de la credencial del IFE de la
+                                persona interesada
+                                y de la persona que recogerá los documentos.</li>
+                        </ul>
+                    </div>
+                </div>
+                <b>Formato:</b>
+                <button type="button" class="btn btn-secondary"
+                    onclick="location.href='../../documentos/FR-01-DPL-CE-PO-002Rev. 4Noadeudoparabaja_ok.pdf'">FR-01-DPL-CE-PO-002Rev.
+                    4Noadeudoparabaja_ok.pdf</button>
+            </main>
+        </div>
+    </div>
+    <!-- Codigo Javascript para que la seleccion del menu lateral pueda activar visualizar los tabs, no solo posicionarlo. No se puede con HTML convencional -->
+    <script> 
+        document.querySelectorAll('a[data-tab]').forEach(link => { //por cada elemeno <a> clickeado
+            link.addEventListener('click', function () { 
+                const tab = this.getAttribute('data-tab'); //obtiene el atributo qu diga data-tab
+
+                setTimeout(() => {
+                    const triggerEl = document.querySelector(`#${tab}-tab`); //encuentra el tab que se coincida con el id
+                    const tabInstance = new bootstrap.Tab(triggerEl); //ordena al framework que active el tab
+                    tabInstance.show();
+                }, 100); // pequeño delay para asegurar que ya hizo scroll
+            });
+        });
+    </script>
+</body>
+
+</html>
