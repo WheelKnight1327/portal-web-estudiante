@@ -17,8 +17,9 @@
     <!--Barra de navegacion superior-->
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="..\imagenes\logo_ceti.png" alt="Logo" width="40" height="40" class="d-inline-block">
+            <a class="navbar-brand" href="index.html">
+                <img src="..\imagenes\img_diseno\logo_ceti.png" alt="Logo" width="40" height="40"
+                    class="d-inline-block">
                 Portal del estudiante
             </a>
             <!---->
@@ -161,8 +162,7 @@
                         <div class="carousel-item active">
                             <!-- <img id="imgCar1" src="..\imagenes\directorio_proteccionDigital.jpg"
                                 class="d-block w-100 mx-auto" alt="..."> -->
-                            <img id="imgCar1" src=""
-                                onclick="abrirAnuncio(0)" class="d-block w-100 mx-auto" alt="...">
+                            <img id="imgCar1" src="" onclick="abrirAnuncio(0)" class="d-block w-100 mx-auto" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5 id="titCar1"></h5>
                                 <p id="desCar1"></p>
@@ -171,8 +171,7 @@
                         <div class="carousel-item">
                             <!-- <img id="imgCar2" src="..\imagenes\transmision_especial_podcast.png"
                                 class="d-block w-100 mx-auto" alt="..."> -->
-                            <img id="imgCar2" src=""
-                                onclick="abrirAnuncio(1)" class="d-block w-100 mx-auto" alt="...">
+                            <img id="imgCar2" src="" onclick="abrirAnuncio(1)" class="d-block w-100 mx-auto" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5 id="titCar2"></h5>
                                 <p id="desCar2"></p>
@@ -181,8 +180,7 @@
                         <div class="carousel-item">
                             <!-- <img id="imgCar3" src="..\imagenes\comunicado_modalidadVirtual.jpg"
                                 class="d-block w-100 mx-auto" alt="..."> -->
-                            <img id="imgCar3" src=""
-                                onclick="abrirAnuncio(2)" class="d-block w-100 mx-auto" alt="...">
+                            <img id="imgCar3" src="" onclick="abrirAnuncio(2)" class="d-block w-100 mx-auto" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5 id="titCar3"></h5>
                                 <p id="desCar3"></p>
@@ -279,7 +277,7 @@
         }
 
         function abrirAnuncio(num) {
-            if(idAnuncios.length != 0){ //no enviara a otra pagina porque no se cargaron anuncios
+            if (idAnuncios.length != 0) { //no enviara a otra pagina porque no se cargaron anuncios
                 const idAbrir = idAnuncios[num];
                 window.open("anuncio.html?id=" + idAbrir);
             }
