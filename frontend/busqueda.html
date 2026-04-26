@@ -72,6 +72,13 @@
             .catch(error => console.error('Error al cargar navbar:', error));
     </script>
     <script>
+        //cambiar la ruta de inicio de pendiendo si es local o desde un servidor
+        const API_BASE =
+            location.hostname === "localhost" || //local
+                location.hostname === "127.0.0.1" //servidor
+                ? "http://localhost:3000"
+                : "/api"; //direcionamiento del servidor
+
         //carga parametros de entrada si el usuario utiliza el form del nav superior
         window.onload = function () { //se ejecuat al cargar la ventana
             const params = new URLSearchParams(window.location.search); //obtiene lista de parametros de la URL
@@ -122,7 +129,7 @@
         function buscar(queryParam) {
             const query = queryParam || document.getElementById("inputPagBusq").value; //toma el dato enviado o el texto dentro del form
             //toma los resultados por medio de petición GET y despues llama a la función para mostrarlos
-            fetch(`http://localhost:3000/busqueda?b=${encodeURIComponent(query)}`)
+            fetch(`${API_BASE}/busqueda?b=${encodeURIComponent(query)}`)
                 .then(pags => pags.json()) //obtiene datos y convierte a JSON
                 .then(pagsJSON => mostrarPaginas(pagsJSON)) //JSON a funcion
                 .catch(error => { //en caso de haber un problema

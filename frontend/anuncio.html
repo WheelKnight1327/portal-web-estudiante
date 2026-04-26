@@ -70,6 +70,13 @@
     <!--Libreria especifica para limpiar html de codigo malicioso-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
     <script>
+        //cambiar la ruta de inicio de pendiendo si es local o desde un servidor
+        const API_BASE =
+            location.hostname === "localhost" || //local
+                location.hostname === "127.0.0.1" //servidor
+                ? "http://localhost:3000"
+                : "/api"; //direcionamiento del servidor
+
         window.onload = function () {
             const params = new URLSearchParams(window.location.search);
             const query = params.get("id");
@@ -83,7 +90,7 @@
         }
 
         function solicitarAnuncio(queryParam) {
-            fetch(`http://localhost:3000/obtener-anuncio?a=${encodeURIComponent(queryParam)}`)
+            fetch(`${API_BASE}/obtener-anuncio?a=${encodeURIComponent(queryParam)}`)
                 .then(an => an.json())
                 .then(anJSON => {
                     if (!anJSON) {
