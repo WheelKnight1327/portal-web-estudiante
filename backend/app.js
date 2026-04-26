@@ -6,15 +6,16 @@ const { MongoClient, ObjectId } = require('mongodb'); //uso de motor de mongodb
 const app = express(); //instancia de aplicación HTTP para poder empezar a consultar queries GET o POST
 const client = new MongoClient('mongodb://localhost:27017'); //usa conexion de mondogdb, tiene que ser el mismo puerto de la conexion
 
+client.connect() //se tiene que conectar a la base de datos
+.then(() => console.log('Conexión completada a MongoDB')) //conexio completada
+.catch(console.error()); //error de conexion
+const db = client.db('portal_web'); //obtiene conexión con la base de datos no relacional
+
 app.use(cors()); //habilita cors
 //peticion get para realizar busqueda de páginas
 app.get('/busqueda', async (req, res) => { //req de datos enviados, res datos qeu se podran enviar
     console.log('Servidor recibió peticion GET de busqueda.html');
     const query = req.query.b //lee el atributo b que fue enviado
-
-    await client.connect(); //espera a que se conecte con la base de datos
-    console.log('Conexión completada a MongoDB');
-    const db = client.db('portal_web'); //obtiene conexión con la base de datos no relacional
 
     const palabras = query.split(" "); //obtiene lista de palabras en caso de poner mas de una
     //se crea una expresion regular dinamica por cada palabra
@@ -39,10 +40,6 @@ app.get('/obtener-anuncio', async (req, res) => {
     console.log('Servidor recibió peticion GET de anuncio.html');
     const query = req.query.a //lee el atributo "a"
 
-    await client.connect(); //espera a que se conecte con la base de datos
-    console.log('Conexión completada a MongoDB');
-    const db = client.db('portal_web'); //obtiene conexión con la base de datos no relacional
-
     const resultado = await db.collection('anuncios').findOne({
         _id: new ObjectId(query) //utiliza el id para localizarlo
     })
@@ -53,10 +50,6 @@ app.get('/obtener-anuncio', async (req, res) => {
 
 app.get('/anun-princ', async (req, res) => {//atributo no necesario
     console.log('Servidor recibió peticion GET de pagina_principal.html');
-
-    await client.connect(); //espera a que se conecte con la base de datos
-    console.log('Conexión completada a MongoDB');
-    const db = client.db('portal_web'); //obtiene conexión con la base de datos no relacional
 
     const consulta = {}; //consulta vacia porque queremos que tome todos los anuncios
     const filtro = {fecha: -1}; //ordene los anuncios del mas reciente al mas viejo
@@ -71,3 +64,5 @@ app.get('/anun-princ', async (req, res) => {//atributo no necesario
 app.listen(3000, () => {
     console.log('Servidor corriendo en el puerto 3000');
 });
+
+app.use(express.json());
