@@ -248,7 +248,7 @@
 
             resultados.forEach(r => { //crea un label <a> con el hipervinculo del resultado
                 div.innerHTML += `
-                    <a href="${r.url}"><h2>${r.nombre}</h2></a>
+                    <a href="/paginas_web/${r.url}"><h2>${r.nombre}</h2></a>
                     <p>Palabras clave: ${r["palabras_clave"].join(", ")}</p>
                 `;
             });
