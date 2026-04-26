@@ -207,7 +207,7 @@
         //al recibir anuncio en HTML, lo carga a la página por elementos HTML
         function cargarAnuncio(anuncioJSON) {
             const contenidoLimpio = DOMPurify.sanitize(anuncioJSON.contenido); //limpiando contenido
-            document.getElementById("visAnuncio").src = "..\\imagenes\\\\img_anuncios\\" + anuncioJSON.imagen; // carga imagen.
+            document.getElementById("visAnuncio").src = "/imagenes/img_anuncios/" + anuncioJSON.imagen; // carga imagen.
             document.getElementById("tituloAnucio").textContent = anuncioJSON.titulo; //carga titulo
             //document.getElementById("contenidoAnuncio").textContent = anuncioJSON.contenido;
             document.getElementById("contenidoAnuncio").innerHTML = contenidoLimpio; //carga seccion HTML del contenido

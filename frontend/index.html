@@ -272,7 +272,7 @@
             i = 0;
             resultados.forEach(anuncio => {
                 i++;
-                document.getElementById("imgCar" + i).src = "..\\imagenes\\\\img_anuncios\\" + anuncio.imagen;
+                document.getElementById("imgCar" + i).src = "/imagenes/img_anuncios/" + anuncio.imagen;
                 document.getElementById("titCar" + i).textContent = anuncio.titulo;
                 document.getElementById("desCar" + i).textContent = anuncio.descripcion;
                 idAnuncios.push(anuncio._id);
