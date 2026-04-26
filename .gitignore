@@ -5,4 +5,4 @@ backend/node_modules/
 #Archivos del portal (pueden ser pesados, a revisar)
 imagenes/*
 !imagenes/img_diseno
-documentos/
+#/documento removido
