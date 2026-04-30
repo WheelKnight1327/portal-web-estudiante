@@ -1,12 +1,21 @@
 const cors = require('cors'); //permite que pueda acceptar peticiones de paginas fuera del servidor
+require("dotenv").config(); //utiliza información del archivo ,env
 
 const express = require('express'); //framework de express para Node.js
 const { MongoClient, ObjectId } = require('mongodb'); //uso de motor de mongodb
+const uri = process.env.MONGO_URI; //obtiene uri de .env
 
 const app = express(); //instancia de aplicación HTTP para poder empezar a consultar queries GET o POST
-const client = new MongoClient('mongodb://localhost:27017'); //usa conexion de mondogdb, tiene que ser el mismo puerto de la conexion
+//const client = new MongoClient('mongodb://localhost:27017'); //usa conexion de mondogdb local
+const client = new MongoClient(uri, { //establece conexion de mondogdb en la nube
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
 
-client.connect() //se tiene que conectar a la base de datos
+await client.connect() //se tiene que conectar a la base de datos
 .then(() => console.log('Conexión completada a MongoDB')) //conexio completada
 .catch(console.error()); //error de conexion
 const db = client.db('portal_web'); //obtiene conexión con la base de datos no relacional
