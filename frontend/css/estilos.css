@@ -48,6 +48,13 @@
   padding: 10px;
   width: 100%;
 }
+
+.bordedText{ /*definir borde para carusel*/
+    font-weight: bold;
+    color: black;
+    -webkit-text-stroke: 2px black;
+}
+
 /* comportamiento cuando ancho sea mayor que "m" */
 @media (min-width: 768px) {
     /* espacio de fondo llenara espacio visible */
