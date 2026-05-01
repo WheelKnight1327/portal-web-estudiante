@@ -1,6 +1,7 @@
 #Carpetas de configuracion
 .vscode/
 backend/node_modules/
+backend/.env
 
 #Archivos del portal (pueden ser pesados, a revisar)
 imagenes/*
