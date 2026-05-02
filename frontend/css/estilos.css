@@ -1,9 +1,108 @@
+:root {
+    /*definicion de color de página*/
+    --primary: hsl(221, 64%, 33%);
+    --primary-light: hsl(221, 73%, 53%);
+    --primary-dark: hsl(221, 64%, 25%);
+
+    --bg-main: hsl(210, 20%, 96%);
+    --bg-content: hsl(0, 0%, 100%);
+    --bg-aside: hsl(210, 25%, 92%);
+    --gray-text: hsl(215, 19%, 35%);
+
+    --accent: hsl(45, 74%, 46%);
+    --accent-hover: hsl(45, 65%, 39%);
+
+    --link-color: hsl(214, 70%, 40%);
+    --link-hover: hsl(214, 70%, 30%);
+}
+
 :target {
-  scroll-margin-top: 70px;
+    scroll-margin-top: 70px;
+    /*offset al dar click a hipervinculo*/
+}
+
+body {
+    /*todo lo que se ve*/
+    background-color: var(--bg-main);
+}
+
+main {
+    /*elemento del contenido principal*/
+    background-color: var(--bg-content);
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+aside {
+    /*Contenido complementario (panel lateral)*/
+    background-color: var(--bg-aside);
+    padding: 15px;
+}
+
+aside a {
+    /*link del panel lateral*/
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+aside a:hover {
+    /*sobreposicion links*/
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+.navbar {
+    background-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    transition: all 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+    background-color: var(--primary-light);
+    color: white;
+    border-radius: 6px;
+}
+
+.navbar .nav-link.active {
+    background-color: var(--primary-dark);
+}
+
+.dropdown-menu {
+    background-color: hsl(210, 20%, 95%);
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item:hover {
+    background-color: hsl(214, 70%, 90%);
+}
+
+#formNavBusq input {
+    border-radius: 20px;
+}
+
+#formNavBusq button {
+    border-radius: 20px;
+}
+
+.btn-danger {
+    background-color: hsl(0, 65%, 45%);
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: hsl(0, 65%, 38%);
 }
 
 #carouselAnuncios {
-    height: 60vh; /* altura relativa a la pantalla */
+    height: 60vh;
+    /* altura relativa a la pantalla */
 }
 
 #carouselAnuncios .carousel-inner,
@@ -18,44 +117,51 @@
     cursor: pointer;
 }
 
-#inputBusqPrinc{
-  font-size: 20px;
+#inputBusqPrinc {
+    font-size: 20px;
 }
 
 #inputBusqPrinc::placeholder {
-  font-style: italic;
-  font-size: 20px;
+    font-style: italic;
+    font-size: 20px;
 }
 
-#inputPagBusq{
-  font-size: 20px;
-  /* height: 60px;
+#inputPagBusq {
+    font-size: 20px;
+    /* height: 60px;
   padding-top: 0;
   padding-bottom: 0; */
 }
 
 #inputPagBusq::placeholder {
-  font-style: italic;
-  font-size: 20px;
+    font-style: italic;
+    font-size: 20px;
 }
 
-#logoPieDePagina img{
-  object-fit: contain;
+.footer {
+    background-color: var(--primary);
+    color: var(--gray-bg);
+}
+
+#logoPieDePagina img {
+    object-fit: contain;
 }
 
 .page_img {
-  max-width: 600px;
-  padding: 10px;
-  width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    width: 100%;
 }
 
-.bordedText{ /*definir borde para carusel*/
+.bordedText {
+    /*definir borde para carusel*/
     font-weight: bold;
     color: black;
     -webkit-text-stroke: 1px white;
 }
 
-.shadowtext{ /*definir borde para carusel*/
+.shadowtext {
+    /*definir borde para carusel*/
     font-weight: bold;
     color: black;
     text-shadow: 0 0 5px white, 0 0 5px white;
@@ -63,13 +169,19 @@
 
 /* comportamiento cuando ancho sea mayor que "m" */
 @media (min-width: 768px) {
+
     /* espacio de fondo llenara espacio visible */
     .altura-flexible {
-        min-height: calc(100vh - 70px); /*remueve el espacio que toma el navbar*/
+        min-height: calc(100vh - 70px);
+        /*remueve el espacio que toma el navbar*/
     }
-    .img-anuncio { /*imagen no rebasara espacio visible posible*/
+
+    .img-anuncio {
+        /*imagen no rebasara espacio visible posible*/
         max-height: calc(100vh - 70px);
-        object-fit: contain; /*No perder relacion de aspecto*/
+        object-fit: contain;
+        /*No perder relacion de aspecto*/
     }
 }
+
 /*cuando sea menor que m estos cambios seran anulados.*/
