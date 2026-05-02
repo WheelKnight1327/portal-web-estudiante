@@ -24,6 +24,7 @@
 body {
     /*todo lo que se ve*/
     background-color: var(--bg-main);
+    padding-top:66px;
 }
 
 main {
@@ -64,6 +65,7 @@ aside .nav-link:hover {
     color: var(--bg-main);
     border-color: var(--primary-light);
     border-radius: 8px;
+    
 }
 
 
@@ -217,6 +219,7 @@ aside .nav-link:hover {
         height: 40px;
         /* Forzamos fondo blanco si el body es gris */
     }
+
     #sideBarMenu.collapsing,
     #sideBarMenu.show {
         background-color: var(--bg-aside);
