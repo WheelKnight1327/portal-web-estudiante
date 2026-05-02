@@ -37,20 +37,35 @@ main {
 aside {
     /*Contenido complementario (panel lateral)*/
     background-color: var(--bg-aside);
+    /* background-color: white; */
     padding: 15px;
 }
 
-aside a {
+aside .nav-link {
     /*link del panel lateral*/
     color: var(--link-color);
     text-decoration: none;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    padding: 6px 10px;
+    transition: all 0.2s ease;
 }
 
-aside a:hover {
+aside .nav-link:hover {
     /*sobreposicion links*/
-    color: var(--link-hover);
+    background-color: var(--link-hover);
     text-decoration: underline;
+    color: var(--bg-aside);
 }
+
+.btn-aside {
+    /*boton movil contraer*/
+    background-color: transparent;
+    color: var(--bg-main);
+    border-color: var(--primary-light);
+    border-radius: 8px;
+}
+
 
 .navbar {
     background-color: var(--primary);
@@ -181,6 +196,37 @@ aside a:hover {
         max-height: calc(100vh - 70px);
         object-fit: contain;
         /*No perder relacion de aspecto*/
+    }
+}
+
+/* comportamiento cuando ancho sea menor que "m" */
+@media (max-width: 767px) {
+    .bg-content-mobile { /*para forzar color superior de pagina mobil en blanco*/
+        background-color: var(--bg-content);
+    }
+
+    aside {
+        background-color: transparent;
+        padding-top: 0;
+    }
+
+    .btn-aside {
+        background-color: var(--primary-light);
+        margin-bottom: 0 !important;
+        z-index: 2;
+        height: 40px;
+        /* Forzamos fondo blanco si el body es gris */
+    }
+    #sideBarMenu.collapsing,
+    #sideBarMenu.show {
+        background-color: var(--bg-aside);
+        padding-left: 15px;
+        padding-right: 15px;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    }
+
+    main {
+        box-shadow: none;
     }
 }
 
