@@ -24,7 +24,7 @@
 body {
     /*todo lo que se ve*/
     background-color: var(--bg-main);
-    padding-top:66px;
+    padding-top:66px; /*para que no cubra navbar*/
 }
 
 main {
