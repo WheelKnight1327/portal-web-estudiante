@@ -167,7 +167,7 @@ aside .nav-link:hover {
 
 .footer {
     background-color: var(--primary);
-    color: var(--gray-bg);
+    color: var(--bg-main);
 }
 
 #logoPieDePagina img {
