@@ -43,6 +43,10 @@ aside {
     padding: 15px;
 }
 
+.seccionAnuncio {
+    background-color: var(--bg-aside) !important;
+}
+
 aside .nav-link {
     /*link del panel lateral*/
     color: var(--link-color);
