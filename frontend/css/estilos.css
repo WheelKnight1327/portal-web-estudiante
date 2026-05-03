@@ -24,7 +24,8 @@
 body {
     /*todo lo que se ve*/
     background-color: var(--bg-main);
-    padding-top:66px; /*para que no cubra navbar*/
+    padding-top: 66px;
+    /*para que no cubra navbar*/
 }
 
 main {
@@ -65,7 +66,7 @@ aside .nav-link:hover {
     color: var(--bg-main);
     border-color: var(--primary-light);
     border-radius: 8px;
-    
+
 }
 
 
@@ -184,6 +185,29 @@ aside .nav-link:hover {
     text-shadow: 0 0 5px white, 0 0 5px white;
 }
 
+.img-anuncio {
+    cursor: zoom-in;
+    /*animacion*/
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.img-anuncio.full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    max-width: none !important; 
+    max-height: none !important;
+    background-color: rgba(0, 0, 0, 0.9); /*fondo de color negro*/
+    z-index: 9999; /* por encima del contenido*/
+    cursor: zoom-out;
+    padding: 20px;
+}
+
 /* comportamiento cuando ancho sea mayor que "m" */
 @media (min-width: 768px) {
 
@@ -203,7 +227,8 @@ aside .nav-link:hover {
 
 /* comportamiento cuando ancho sea menor que "m" */
 @media (max-width: 767px) {
-    .bg-content-mobile { /*para forzar color superior de pagina mobil en blanco*/
+    .bg-content-mobile {
+        /*para forzar color superior de pagina mobil en blanco*/
         background-color: var(--bg-content);
     }
 
@@ -225,7 +250,7 @@ aside .nav-link:hover {
         background-color: var(--bg-aside);
         padding-left: 15px;
         padding-right: 15px;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
     }
 
     main {

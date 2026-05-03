@@ -16,23 +16,12 @@
 <body>
     <!--Barra de navegación superior-->
     <div id="navbar"></div>
-    <!-- <div>
-        <div class="row">
-            <div class="col-12 col-md-6 bg-light border-end p-3">
-                <img src="..\imagenes\comunidado_modalidadVirtual.jpg" 
-                    class="img-fluid w-100"
-                    style="max-height: 100vh; object-fit: contain;"
-                    alt="Anuncio seleccionado. SI no se visualiza, recargue la pagina.">
-            </div>
-            <div class="col-12 col-md-6 p-2">Columna derecha</div>
-        </div>
-    </div> -->
     <div class="container-fluid">
         <!--comportamiento de renglon especial-->
         <div class="row altura-flexible">
-            <div class="col-12 col-md-6 bg-light border-end d-flex align-items-center justify-content-center">
+            <div class="col-12 col-md-6 border-end d-flex align-items-center justify-content-center">
                 <!--clase especial de imagen-->
-                <img id="visAnuncio" src="" class="img-fluid p-3 img-anuncio" alt="Anuncio seleccionado.">
+                <img id="visAnuncio" src="" class="img-fluid p-3 img-anuncio" alt="Haga click para expandir la imagen.">
             </div>
             <div class="col-12 col-md-6 p-2">
                 <h1 id="tituloAnucio"></h1>
@@ -77,11 +66,11 @@
                 ? "http://localhost:3000"
                 : "/api"; //direcionamiento del servidor
 
-        window.onload = function () {
+        window.onload = function () { //al cargar la pagina
             const params = new URLSearchParams(window.location.search);
-            const query = params.get("id");
+            const query = params.get("id"); //obtiene id de la URL
 
-            if (query) {
+            if (query) { //si hay, pide imagen
                 solicitarAnuncio(query);
             }
             else {
@@ -113,6 +102,21 @@
             //document.getElementById("contenidoAnuncio").textContent = anuncioJSON.contenido;
             document.getElementById("contenidoAnuncio").innerHTML = contenidoLimpio; //carga seccion HTML del contenido
         }
+        //seccion de código para imagen que se expande
+        const imagen = document.getElementById('visAnuncio'); //elem de imagen de anuncio
+
+        imagen.addEventListener('click', () => { //al darle click a la imagen
+            imagen.classList.toggle('full-screen'); //habilita la propiedad fullscreen
+
+            //al expandir, el scroll se bloquea
+            if (imagen.classList.contains('full-screen')) { 
+                //imagen.classList.add('full-screen'); //agrega propiedad fullscreen
+                document.body.style.overflow = 'hidden';
+            } else {
+                //imagen.classList.remove('full-screen'); //quita propiedad fullscreen
+                document.body.style.overflow = 'auto';
+            }
+        });
     </script>
     <footer>
         <!--Aqui irá contenido del pie de pagina-->
