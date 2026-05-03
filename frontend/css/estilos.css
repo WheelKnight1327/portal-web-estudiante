@@ -24,8 +24,13 @@
 body {
     /*todo lo que se ve*/
     background-color: var(--bg-main);
-    padding-top: 66px;
-    /*para que no cubra navbar*/
+    padding-top: 66px; /*para que no cubra navbar*/
+    /*tipografia elegida para todo el proyecto*/
+    font-family: 'Inter', sans-serif;
+}
+/*control de peso de los titulos*/
+h1, h2, h3 {
+  font-weight: 600;
 }
 
 main {
