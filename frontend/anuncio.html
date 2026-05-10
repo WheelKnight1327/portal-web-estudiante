@@ -103,6 +103,7 @@
             document.getElementById("tituloAnucio").textContent = anuncioJSON.titulo; //carga titulo
             //document.getElementById("contenidoAnuncio").textContent = anuncioJSON.contenido;
             document.getElementById("contenidoAnuncio").innerHTML = contenidoLimpio; //carga seccion HTML del contenido
+            document.getElementById("contenidoAnuncio").innerHTML += "<br><b>(Haga click en la imagen para expandir).</b>";
         }
         //seccion de código para imagen que se expande
         const imagen = document.getElementById('visAnuncio'); //elem de imagen de anuncio
