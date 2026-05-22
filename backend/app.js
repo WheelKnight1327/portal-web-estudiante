@@ -1,6 +1,8 @@
 const cors = require('cors'); //permite que pueda acceptar peticiones de paginas fuera del servidor
 require("dotenv").config(); //utiliza información del archivo ,env
 
+const bcrypt = require('bcrypt'); //libreria para comparacion de hasheo
+
 const express = require('express'); //framework de express para Node.js
 const { MongoClient, ObjectId } = require('mongodb'); //uso de motor de mongodb
 console.log("URI:", process.env.MONGO_URI);
@@ -64,6 +66,52 @@ app.get('/anun-princ', async (req, res) => {//atributo no necesario
 
     console.log('Anuncios obtenidos, enviando al cliente.');
     res.json(resultados); //envia resultados usando conexión
+});
+//peticion POST para inicio de sesion
+app.post('/api/login', async (req, res) => {
+    try {
+        const { correo, password } = req.body; //obtiene atributos
+
+        //peticion de usuario
+        const usuario = await db.collection('usuarios').findOne({
+            correo: correo
+        });
+
+        // Si no existe
+        if (!usuario) {
+            return res.status(401).json({
+                mensaje: 'Usuario o contraseña incorrectos'
+            });
+        }
+
+        //Compara password con hash
+        const coincide = await bcrypt.compare(
+            password,
+            usuario.password
+        );
+
+        //Si no coincide
+        if (!coincide) {
+            return res.status(401).json({
+                mensaje: 'Usuario o contraseña incorrectos'
+            });
+        }
+
+        //Login correcto
+        console.log('Un usuario ingreso al portal.')
+        res.json({
+            mensaje: 'Login correcto'
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            mensaje: 'Error del servidor'
+        });
+    }
+
 });
 
 app.listen(3000, () => {

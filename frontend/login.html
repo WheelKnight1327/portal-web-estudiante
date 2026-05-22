@@ -84,6 +84,13 @@
     </script>
     <!-- script para inicio de sesion -->
     <script>
+        //cambiar la ruta de inicio de pendiendo si es local o desde un servidor
+        const API_BASE =
+            location.hostname === "localhost" || //local
+                location.hostname === "127.0.0.1" //servidor
+                ? "http://localhost:3000"
+                : "/api"; //direcionamiento del servidor
+
         const formulario = document.getElementById('loginForm');
 
         formulario.addEventListener('submit', async (e) => {
@@ -97,7 +104,7 @@
             //por si sucede un error
             try {
                 //envia los campos de usuario y contraseña a la API
-                const respuesta = await fetch('/api/login', {
+                const respuesta = await fetch(`${API_BASE}/api/login`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
