@@ -2,6 +2,7 @@
 .vscode/
 backend/node_modules/
 backend/.env
+backend/hash.js
 
 #Archivos del portal (pueden ser pesados, a revisar)
 imagenes/*

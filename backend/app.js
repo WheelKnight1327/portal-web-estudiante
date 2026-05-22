@@ -16,6 +16,7 @@ client.connect() //se tiene que conectar a la base de datos
 const db = client.db('portal_web'); //obtiene conexión con la base de datos no relacional
 
 app.use(cors()); //habilita cors
+app.use(express.json()); //habilita peitiones POST
 //peticion get para realizar busqueda de páginas
 app.get('/busqueda', async (req, res) => { //req de datos enviados, res datos qeu se podran enviar
     console.log('Servidor recibió peticion GET de busqueda.html');
@@ -68,5 +69,3 @@ app.get('/anun-princ', async (req, res) => {//atributo no necesario
 app.listen(3000, () => {
     console.log('Servidor corriendo en el puerto 3000');
 });
-
-app.use(express.json());

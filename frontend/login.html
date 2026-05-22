@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <!-- Bootstrap 5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Hoja de estilos personal -->
+    <link href="/css/estilos.css" rel="stylesheet">
+</head>
+
+<body style="padding-top:70px;">
+    <!-- aqui va navbar -->
+    <div id="navbar"></div>
+    <!-- contenido principal -->
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+                <div class="card shadow mt-5">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">
+                            Iniciar Sesión
+                        </h2>
+                        <!-- alerta -->
+                        <div id="mensaje" class="alert d-none" role="alert"></div>
+                        <!-- seccion de fourmlario -->
+                        <form id="loginForm">
+                            <!-- correo -->
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">
+                                    Correo electrónico
+                                </label>
+                                <input type="email" class="form-control" id="correo" required>
+                            </div>
+                            <!-- contraseña -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label">
+                                    Contraseña
+                                </label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <!-- boton de ingresar -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">
+                                    Ingresar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- script para cargar navbar -->
+    <script>
+        fetch('/navbar.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Error al cargar la navbar');
+                return response.text();
+            })
+            .then(data => {
+
+                document.getElementById('navbar').innerHTML = data;
+
+                const dropdownElementList = document.querySelectorAll('.dropdown-toggle');
+
+                dropdownElementList.forEach(dropdownToggleEl => {
+                    new bootstrap.Dropdown(dropdownToggleEl);
+                });
+
+                const navbarCollapse = document.getElementById('navbarScroll');
+
+                if (navbarCollapse) {
+                    new bootstrap.Collapse(navbarCollapse, {
+                        toggle: false
+                    });
+                }
+            })
+            .catch(error => console.error('Error al cargar navbar:', error));
+    </script>
+    <!-- script para inicio de sesion -->
+    <script>
+        const formulario = document.getElementById('loginForm');
+
+        formulario.addEventListener('submit', async (e) => {
+
+            e.preventDefault();
+
+            const correo = document.getElementById('correo').value;
+            const password = document.getElementById('password').value;
+
+            const mensaje = document.getElementById('mensaje');
+            //por si sucede un error
+            try {
+                //envia los campos de usuario y contraseña a la API
+                const respuesta = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        correo,
+                        password
+                    })
+
+                });
+                //espera resoua
+                const datos = await respuesta.json();
+
+                if (respuesta.ok) {
+
+                    mensaje.classList.remove('d-none', 'alert-danger');
+                    mensaje.classList.add('alert-success');
+
+                    mensaje.textContent = 'Inicio de sesión exitoso';
+
+                    console.log(datos);
+
+                    // redirige a la sección indicada
+                    setTimeout(() => {
+                        window.location.href = '/index.html';
+                    }, 1000);
+                } else { //agrega mensajes de error
+                    mensaje.classList.remove('d-none', 'alert-success');
+                    mensaje.classList.add('alert-danger');
+                    mensaje.textContent = datos.mensaje || 'Credenciales incorrectas';
+                }
+
+            } catch (error) {
+                //errores de conexion
+                console.error(error);
+
+                mensaje.classList.remove('d-none', 'alert-success');
+                mensaje.classList.add('alert-danger');
+
+                mensaje.textContent = 'Error del servidor';
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
