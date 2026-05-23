@@ -4,6 +4,8 @@ require("dotenv").config(); //utiliza información del archivo ,env
 const bcrypt = require('bcrypt'); //libreria para comparacion de hasheo
 
 const multer = require('multer'); //libreria para carga de imagenes
+const sharp = require('sharp'); //libreria para convertir imagenes en webp
+const fs = require('fs');
 const jwt = require('jsonwebtoken'); //libreria para verificacio de login
 const path = require('path'); //corecatmenta navegar por directorio
 
@@ -182,6 +184,34 @@ app.post('/api/login', async (req, res) => {
     }
 
 });
+
+function reemplazarImagen(rutaOriginal) {
+    const nombreWebp = Date.now() + '.webp'; //nuevo nombre
+
+    const rutaWebp = path.join(
+        __dirname,
+        '..',
+        'frontend',
+        'imagenes',
+        'img_anuncios',
+        nombreWebp
+    );
+    //convierte imagen original a webp
+    await sharp(rutaOriginal)
+        .resize({
+            width: 1200,
+            withoutEnlargement: true
+        })
+        .webp({
+            quality: 80
+        })
+        .toFile(rutaWebp);
+    //borra original
+    fs.unlinkSync(rutaOriginal);
+
+    return nombreWebp;
+}
+
 //peticion post para subir un anuncio ,no sin antes verificar el token
 app.post('/api/subir-anuncio', verificarToken, upload.single('imagen'), async (req, res) => {
 
@@ -200,12 +230,15 @@ app.post('/api/subir-anuncio', verificarToken, upload.single('imagen'), async (r
             });
         }
 
+        //cambio de imagen a webp
+        const nombreWebp = reemplazarImagen(req.file.path);
+
         //crear objeto del anuncio
         const nuevoAnuncio = {
             titulo: titulo,
             descripcion: descripcion,
             contenido: contenido,
-            imagen: req.file.filename, //nombre de archivo apra encontrarlo depsues
+            imagen: nombreWebp,
             fecha: new Date() //usa la fecha de subida
         };
         //guardar en mongodb
