@@ -7,7 +7,7 @@ const multer = require('multer'); //libreria para carga de imagenes
 const sharp = require('sharp'); //libreria para convertir imagenes en webp
 const fs = require('fs');
 const jwt = require('jsonwebtoken'); //libreria para verificacio de login
-const path = require('path'); //corecatmenta navegar por directorio
+const path = require('path'); //corecatmenta navegar por directorios
 
 const pathImagenes = path.join( //directorio de imagenes
     __dirname,
@@ -23,8 +23,8 @@ console.log("URI:", process.env.MONGO_URI);
 const uri = process.env.MONGO_URI; //obtiene uri de .env
 
 const app = express(); //instancia de aplicación HTTP para poder empezar a consultar queries GET o POST
-//const client = new MongoClient('mongodb://localhost:27017'); //usa conexion de mondogdb local
-const client = new MongoClient(uri);
+const client = new MongoClient('mongodb://localhost:27017'); //usa conexion de mondogdb local
+//const client = new MongoClient(uri); //conexion base en la nube
 
 client.connect() //se tiene que conectar a la base de datos
     .then(() => console.log('Conexión completada a MongoDB')) //conexio completada
@@ -185,33 +185,6 @@ app.post('/api/login', async (req, res) => {
 
 });
 
-function reemplazarImagen(rutaOriginal) {
-    const nombreWebp = Date.now() + '.webp'; //nuevo nombre
-
-    const rutaWebp = path.join(
-        __dirname,
-        '..',
-        'frontend',
-        'imagenes',
-        'img_anuncios',
-        nombreWebp
-    );
-    //convierte imagen original a webp
-    await sharp(rutaOriginal)
-        .resize({
-            width: 1200,
-            withoutEnlargement: true
-        })
-        .webp({
-            quality: 80
-        })
-        .toFile(rutaWebp);
-    //borra original
-    fs.unlinkSync(rutaOriginal);
-
-    return nombreWebp;
-}
-
 //peticion post para subir un anuncio ,no sin antes verificar el token
 app.post('/api/subir-anuncio', verificarToken, upload.single('imagen'), async (req, res) => {
 
@@ -231,7 +204,31 @@ app.post('/api/subir-anuncio', verificarToken, upload.single('imagen'), async (r
         }
 
         //cambio de imagen a webp
-        const nombreWebp = reemplazarImagen(req.file.path);
+        //const nombreWebp = reemplazarImagen(req.file.path);
+        const rutaOriginal = req.file.path;
+        const nombreWebp = Date.now() + '.webp'; //nuevo nombre
+
+        const rutaWebp = path.join(
+            __dirname,
+            '..',
+            'frontend',
+            'imagenes',
+            'img_anuncios',
+            nombreWebp
+        );
+        //convierte imagen original a webp
+        await sharp(rutaOriginal)
+            .resize({
+                width: 1200,
+                withoutEnlargement: true
+            })
+            .webp({
+                quality: 80
+            })
+            .toFile(rutaWebp);
+        //borra original
+        fs.unlinkSync(rutaOriginal);
+
 
         //crear objeto del anuncio
         const nuevoAnuncio = {
@@ -243,7 +240,7 @@ app.post('/api/subir-anuncio', verificarToken, upload.single('imagen'), async (r
         };
         //guardar en mongodb
         await db.collection('anuncios').insertOne(nuevoAnuncio);
-
+        console.log('Se subio un anuncio a la base.')
         res.json({
             mensaje: 'Anuncio subido correctamente'
         });
