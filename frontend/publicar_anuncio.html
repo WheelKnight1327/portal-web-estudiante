@@ -47,7 +47,7 @@
                             Crear Anuncio
                         </h2>
                         <!-- laerta -->
-                        <div id="mensaje" class="alert d-none">
+                        <div id="mensaje" class="alert d-none" role="alert">
                         </div>
                         <!-- formulario -->
                         <form id="formAnuncio">
@@ -92,33 +92,6 @@
     </div>
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- navbar -->
-    <script>
-        fetch('/navbar.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Error al cargar la navbar');
-                return response.text();
-            })
-            .then(data => {
-                //Cargar navbar en div con id
-                document.getElementById('navbar').innerHTML = data;
-
-                //iniciar los dropwdown por medio de boostrap
-                const dropdownElementList = document.querySelectorAll('.dropdown-toggle');
-                dropdownElementList.forEach(dropdownToggleEl => {
-                    new bootstrap.Dropdown(dropdownToggleEl);
-                });
-
-                //recargar boton de 3 lineas por boostrap
-                const navbarCollapse = document.getElementById('navbarScroll');
-                if (navbarCollapse) {
-                    new bootstrap.Collapse(navbarCollapse, {
-                        toggle: false //para que no se abra al cargar
-                    });
-                }
-            })
-            .catch(error => console.error('Error al cargar navbar:', error));
-    </script>
     <!-- instrucciones subir anuncio -->
     <script>
         //cambiar la ruta de inicio de pendiendo si es local o desde un servidor
@@ -127,7 +100,7 @@
                 location.hostname === "127.0.0.1" //servidor
                 ? "http://localhost:3000"
                 : "/api"; //direcionamiento del servidor
-        
+
         const token = localStorage.getItem('token'); //obtiene token local
         if (!token) { //evita que se ingrese sin el token
             window.location.href = '/login.html';
@@ -158,7 +131,6 @@
                 'imagen',
                 document.getElementById('imagen').files[0]
             );
-
             try {
                 const respuesta = await fetch(`${API_BASE}/api/subir-anuncio`, {
                     method: 'POST',
@@ -170,17 +142,15 @@
                     body: formData
                 });
                 const datos = await respuesta.json();
-
+                console.log(datos);
                 if (respuesta.ok) {
-
                     mensaje.classList.remove('d-none', 'alert-danger');
 
                     mensaje.classList.add('alert-success');
 
                     mensaje.textContent = 'Anuncio publicado correctamente';
-
                     formulario.reset();
-
+                    return;
                 } else {
                     mensaje.classList.remove('d-none', 'alert-success');
                     mensaje.classList.add('alert-danger');

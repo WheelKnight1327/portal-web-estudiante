@@ -241,7 +241,7 @@ app.post('/api/subir-anuncio', verificarToken, upload.single('imagen'), async (r
         //guardar en mongodb
         await db.collection('anuncios').insertOne(nuevoAnuncio);
         console.log('Se subio un anuncio a la base.')
-        res.json({
+        return res.status(200).json({
             mensaje: 'Anuncio subido correctamente'
         });
 
@@ -249,7 +249,7 @@ app.post('/api/subir-anuncio', verificarToken, upload.single('imagen'), async (r
 
         console.error(error);
 
-        res.status(500).json({
+        return res.status(500).json({
             mensaje: 'Error del servidor'
         });
     }
