@@ -21,7 +21,9 @@
     <div class="container p-md-3">
         <div class="column">
             <div class="row">
+                <!--Carrusel de anuncios-->
                 <div id="carouselAnuncios" class="carousel slide carousel-dark">
+                    <!--indicadores de inferiores-->
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselAnuncios" data-bs-slide-to="0" class="active"
                             aria-current="true" aria-label="Anuncio 1"></button>
@@ -30,8 +32,10 @@
                         <button type="button" data-bs-target="#carouselAnuncios" data-bs-slide-to="2"
                             aria-label="Anuncio 3"></button>
                     </div>
+                    <!--Vistas de los anuncios-->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
+                            <!--llaman una funcion respecto a orden que aparecen-->
                             <img id="imgCar1" src="" onclick="abrirAnuncio(0)" class="d-block w-100 mx-auto" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5 id="titCar1" class="shadowtext"></h5>
@@ -53,6 +57,7 @@
                             </div>
                         </div>
                     </div>
+                    <!--Controles de atras y adelante-->
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselAnuncios"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -81,6 +86,7 @@
                 </form>
             </div>
             <div class="row">
+                 <!--Introducción del portal-->
                 <h2>¿Qué es el portal del estudiante?</h2>
                 <p style="text-align: justify;"><b>Es un portal web informativo dirigido a los estudiantes del Centro de
                     Enseñanza Técnica Industrial</b>, para cualquier nivel y carrera, <b>que recopila toda la información de la
@@ -97,6 +103,7 @@
             </div>
         </div>
     </div>
+     <!--Pié de página-->
     <footer class="footer p-md-3">
         <div class="container">
             <div class="row justify-content-md-center">
@@ -111,6 +118,7 @@
                 </div>
                 <div class="col-12 col-lg-4 py-3" style="text-align: justify;">
                     Prototipo de proyecto de titulación de Ingeniería en Tecnología de Software.<br>
+                     <!--Vínculo para administrador-->
                     <a href="login.html">Acceso de administrador</a>
                 </div>
             </div>
@@ -151,8 +159,8 @@
                 ? "http://localhost:3000"
                 : "/api"; //direcionamiento del servidor
 
-        let idAnuncios = [];
-        window.onload = function () {
+        let idAnuncios = []; //arreglo de objectID de los anuncios
+        window.onload = function () { //al entrar carga los anuncios
             solicitarAnuncios();
         }
 
@@ -169,20 +177,20 @@
             if (resultados.length == 0) { //mensaje corto si no mando ni un resultado.
                 console.error("No se obtuvieron anuncios.");
             }
-            i = 0;
+            i = 0; //inicializa iterador
             resultados.forEach(anuncio => {
                 i++;
                 document.getElementById("imgCar" + i).src = "/imagenes/img_anuncios/" + anuncio.imagen;
                 document.getElementById("titCar" + i).textContent = anuncio.titulo;
                 document.getElementById("desCar" + i).textContent = anuncio.descripcion;
-                idAnuncios.push(anuncio._id);
+                idAnuncios.push(anuncio._id); //agrega id al arreglo
             });
         }
 
         function abrirAnuncio(num) {
             if (idAnuncios.length != 0) { //no enviara a otra pagina porque no se cargaron anuncios
                 const idAbrir = idAnuncios[num];
-                window.open("anuncio.html?id=" + idAbrir);
+                window.open("anuncio.html?id=" + idAbrir); //abre pagina de anuncio con query
             }
         }
     </script>

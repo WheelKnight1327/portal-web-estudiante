@@ -96,7 +96,7 @@
 
         const formulario = document.getElementById('loginForm');
 
-        formulario.addEventListener('submit', async (e) => {
+        formulario.addEventListener('submit', async (e) => { //
 
             e.preventDefault();
 
@@ -121,18 +121,18 @@
                 //espera respuesta
                 const datos = await respuesta.json();
 
-                if (respuesta.ok) {
+                if (respuesta.ok) { //respuesta de servidor positiva
 
-                    mensaje.classList.remove('d-none', 'alert-danger');
-                    mensaje.classList.add('alert-success');
+                    mensaje.classList.remove('d-none', 'alert-danger'); //quita contenido de alerta
+                    mensaje.classList.add('alert-success'); //define alerta verde de aceptación
 
                     mensaje.textContent = 'Inicio de sesión exitoso';
-                    localStorage.setItem( //guarda el token de inico de sesion
+                    localStorage.setItem( //guarda el token de inicio de sesion
                         'token',
                          datos.token
                     );
                     console.log(datos);
-                    // redirige a la pagina para subir anuncio
+                    // redirige a la pagina para publicar anuncio
                     setTimeout(() => {
                         window.location.href = '/publicar_anuncio.html';
                     }, 1000);

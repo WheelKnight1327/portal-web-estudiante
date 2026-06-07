@@ -21,10 +21,12 @@
     <div class="container-fluid">
         <!--comportamiento de renglon especial-->
         <div class="row altura-flexible">
+            <!--sección del anuncio-->
             <div class="col-12 col-md-6 border-end d-flex align-items-center justify-content-center seccionAnuncio">
                 <!--clase especial de imagen-->
                 <img id="visAnuncio" src="" class="img-fluid p-3 img-anuncio" alt="Haga click para expandir la imagen.">
             </div>
+            <!--sección del contenido complementario-->
             <div class="col-12 col-md-6 p-2">
                 <h1 id="tituloAnucio"></h1>
                 <p id="contenidoAnuncio"></p>
@@ -79,16 +81,16 @@
                 console.error("No se obuvo id de anuncio.");
             }
         }
-
+        //funcion para obtener datos del anuncio que fue incluido en la query al abrir la página
         function solicitarAnuncio(queryParam) {
-            fetch(`${API_BASE}/obtener-anuncio?a=${encodeURIComponent(queryParam)}`)
-                .then(an => an.json())
+            fetch(`${API_BASE}/obtener-anuncio?a=${encodeURIComponent(queryParam)}`) //llamada API de GET del anuncio
+                .then(an => an.json()) //obtencion de respuesta
                 .then(anJSON => {
-                    if (!anJSON) {
+                    if (!anJSON) { //si no se encontro (prob se abrio sin query)
                         console.log("No se encontró el anuncio."); //mensaje de la consola
                         alert("No se encontró un anuncio que cargar"); //mensaje al usuario
                     }
-                    else {
+                    else { //id de anuncio existente
                         cargarAnuncio(anJSON)
                     }
                 })
@@ -121,9 +123,6 @@
             }
         });
     </script>
-    <footer>
-        <!--Aqui irá contenido del pie de pagina-->
-    </footer>
 </body>
 
 </html>

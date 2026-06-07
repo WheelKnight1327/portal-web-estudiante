@@ -22,7 +22,6 @@
                 <img src="/imagenes/img_diseno/logo_ceti.png" alt="Logo" width="40" height="40" class="d-inline-block">
                 Publicar anuncio del CETI
             </a>
-            <!---->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <!--ícono que aparece cuando se acorta barra superior-->
@@ -46,7 +45,7 @@
                         <h2 class="text-center mb-4">
                             Crear Anuncio
                         </h2>
-                        <!-- laerta -->
+                        <!-- Alerta -->
                         <div id="mensaje" class="alert d-none" role="alert">
                         </div>
                         <!-- formulario -->
@@ -105,13 +104,14 @@
         if (!token) { //evita que se ingrese sin el token
             window.location.href = '/login.html';
         }
-
+        //método del formulario
         const formulario = document.getElementById('formAnuncio');
         formulario.addEventListener('submit', async (e) => {
             e.preventDefault();
             const mensaje = document.getElementById('mensaje');
-            //formdata
+            //formdata para encapsular datos en JSON
             const formData = new FormData();
+            //agregado por dato
             formData.append(
                 'titulo',
                 document.getElementById('titulo').value
@@ -131,7 +131,7 @@
                 'imagen',
                 document.getElementById('imagen').files[0]
             );
-            try {
+            try { //llamada a API
                 const respuesta = await fetch(`${API_BASE}/api/subir-anuncio`, {
                     method: 'POST',
 
@@ -141,9 +141,9 @@
 
                     body: formData
                 });
-                const datos = await respuesta.json();
+                const datos = await respuesta.json(); //respuesta de API
                 console.log(datos);
-                if (respuesta.ok) {
+                if (respuesta.ok) { //se logró subir el anuncio
                     mensaje.classList.remove('d-none', 'alert-danger');
 
                     mensaje.classList.add('alert-success');
@@ -151,12 +151,12 @@
                     mensaje.textContent = 'Anuncio publicado correctamente';
                     formulario.reset();
                     return;
-                } else {
+                } else { //mensaje de error
                     mensaje.classList.remove('d-none', 'alert-success');
                     mensaje.classList.add('alert-danger');
                     mensaje.textContent = datos.mensaje;
                 }
-            } catch (error) {
+            } catch (error) { //error en llamada de API
                 console.error(error);
                 mensaje.classList.remove('d-none', 'alert-success');
                 mensaje.classList.add('alert-danger');
@@ -166,7 +166,7 @@
         });
 
         function cerrarSesion() {
-            localStorage.removeItem('token');
+            localStorage.removeItem('token'); //quita el token de de almacenamiento local
             window.location.href = '/index.html';
         };
     </script>
