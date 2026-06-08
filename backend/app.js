@@ -84,8 +84,11 @@ app.get('/busqueda', async (req, res) => { //req de datos enviados, res datos qe
     const query = req.query.b //lee el atributo b que fue enviado
 
     const palabras = query.split(" "); //obtiene lista de palabras en caso de poner mas de una
+    //limpia palabras vacias
+    const palLimpias = palabras.filter(palabra => palabra !== "");
+    //console.log(palLimpias);
     //se crea una expresion regular dinamica por cada palabra
-    const regexes = palabras.map(p => new RegExp(p, 'i')); //i es para remover mayusculas
+    const regexes = palLimpias.map(p => new RegExp(p, 'i')); //i es para remover mayusculas
 
     //opcion 1, buscar que las palabras coincidan
     // const resultados = await db.collection('paginas').find({ //practicamente esta realizando una consulta mongsh
